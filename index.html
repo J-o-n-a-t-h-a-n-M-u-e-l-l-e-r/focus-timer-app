@@ -20,7 +20,10 @@
       <button class="start-button" type="button" id="open-focus-timer">
         Start a focus session
       </button>
-      <p class="status">Choose a duration, then begin when it feels right.</p>
+      <p class="status" id="focus-session-status" aria-live="polite">
+        Choose a duration, then begin when it feels right.
+      </p>
+      <p class="countdown" id="focus-session-countdown"></p>
     </main>
 
     <dialog
@@ -80,6 +83,6 @@
       </div>
     </dialog>
 
-    <script src="focus-timer-modal.js"></script>
+    <script type="module" src="focus-timer-modal.js"></script>
   </body>
 </html>

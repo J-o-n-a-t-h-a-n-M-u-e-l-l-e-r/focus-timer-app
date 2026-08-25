@@ -1,9 +1,8 @@
 # Focus Timer Dashboard
 
-A minimal static dashboard. The planned focus-timer feature is deliberately
-not yet implemented; its four ready-to-file GitHub issue drafts are in
-[`docs/issue-drafts`](docs/issue-drafts), with setup instructions in
-[`docs/GITHUB_ISSUES.md`](docs/GITHUB_ISSUES.md).
+A minimal static dashboard for configuring and running focus sessions. The
+remaining feature work is tracked in the GitHub issue drafts under
+[`docs/issue-drafts`](docs/issue-drafts).
 
 Open `index.html` in a browser to run the app.
 
