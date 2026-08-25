@@ -27,15 +27,16 @@ function setSetupStatus(message) {
 }
 
 function setSessionStatus(message) {
-  setSetupStatus(message);
   sessionStatus.textContent = message;
 }
 
 function renderCountdown(seconds) {
-  sessionCountdown.textContent = formatFocusCountdown(seconds);
+  const countdownLabel = formatFocusCountdown(seconds);
+
+  sessionCountdown.textContent = countdownLabel;
   sessionCountdown.setAttribute(
     "aria-label",
-    `${formatFocusCountdown(seconds)} remaining`,
+    seconds === 0 ? "Focus session complete." : `${countdownLabel} remaining`,
   );
 }
 
@@ -49,8 +50,6 @@ function updateStartAction(minutes = durationSelector.value) {
 const countdown = new FocusSessionCountdown({
   onTick: renderCountdown,
   onComplete: () => {
-    sessionCountdown.textContent = "";
-    sessionCountdown.removeAttribute("aria-label");
     setSessionStatus("Focus session complete. Nice work.");
   },
 });
