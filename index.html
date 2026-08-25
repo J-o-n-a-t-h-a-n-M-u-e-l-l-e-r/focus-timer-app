@@ -15,9 +15,71 @@
       <p class="eyebrow">Focus Timer</p>
       <h1>Make room for meaningful work.</h1>
       <p class="intro">
-        Your dashboard is ready. Focus sessions are the next planned feature.
+        Set aside a block of uninterrupted time when you are ready to begin.
       </p>
-      <p class="status">Coming soon: start a distraction-free session.</p>
+      <button class="start-button" type="button" id="open-focus-timer">
+        Start a focus session
+      </button>
+      <p class="status">Choose a duration, then begin when it feels right.</p>
     </main>
+
+    <dialog
+      class="timer-modal"
+      id="focus-timer-modal"
+      aria-labelledby="focus-timer-modal-title"
+      aria-describedby="focus-timer-modal-description"
+    >
+      <div class="timer-modal__header">
+        <div>
+          <p class="eyebrow">Focus Timer</p>
+          <h2 id="focus-timer-modal-title">Set up your focus session</h2>
+        </div>
+        <form method="dialog">
+          <button
+            class="icon-button"
+            type="submit"
+            aria-label="Close focus timer setup"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="timer-modal__body" id="focus-timer-setup">
+        <p class="timer-modal__description" id="focus-timer-modal-description">
+          Select how long you want to focus. You can start when your session is
+          configured.
+        </p>
+        <section class="duration-slot" aria-labelledby="duration-slot-title">
+          <h3 id="duration-slot-title">Session duration</h3>
+          <div
+            class="duration-slot__content"
+            id="focus-timer-duration-options"
+            data-focus-timer-duration-controls
+          >
+            <p>Duration options will appear here.</p>
+          </div>
+        </section>
+        <p class="timer-status" id="focus-timer-status" aria-live="polite"></p>
+      </div>
+
+      <div class="timer-modal__footer">
+        <button
+          class="start-button"
+          type="button"
+          id="start-focus-session"
+          data-focus-timer-start
+          disabled
+          aria-describedby="focus-timer-start-help"
+        >
+          Start focus session
+        </button>
+        <p class="timer-modal__help" id="focus-timer-start-help">
+          Select a duration to continue.
+        </p>
+      </div>
+    </dialog>
+
+    <script src="focus-timer-modal.js"></script>
   </body>
 </html>
