@@ -119,6 +119,16 @@ export const createFocusDurationSelector = ({
   return selector;
 };
 
+export const mountFocusDurationSelector = (container, options) => {
+  if (!(container instanceof Element)) {
+    throw new TypeError("A DOM element is required to mount the duration selector.");
+  }
+
+  const selector = createFocusDurationSelector(options);
+  container.replaceChildren(selector);
+  return selector;
+};
+
 if (!customElements.get("focus-duration-selector")) {
   customElements.define("focus-duration-selector", FocusDurationSelector);
 }
